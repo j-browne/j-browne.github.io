@@ -1,0 +1,131 @@
+:root {
+  --header-border-width: 3px;
+  --header-width-small: 300px;
+  --header-width-large: 500px;
+  --body-max-width: 800px;
+
+}
+
+:root {
+  --color-bg: #030303;
+  --color-bg-accent: #080D08;
+  --color-text: #EEEEEE;
+  --color-text-accent: #DFFFDF;
+  --color-link: #3B3BED;
+  --color-link-visited: #63388C;
+}
+@media (prefers-color-scheme: light) {
+  :root{
+    --color-bg: #EEEEEE;
+    --color-bg-accent: #DFFFDF;
+    --color-text: #030303;
+    --color-text-accent: #080D08;
+    --color-link: #0000EE;
+    --color-link-visited: #551A8B;
+  }
+}
+
+@font-face {
+  font-family: Rochester;
+  src: url("/assets/Rochester-Regular.ttf");
+}
+
+:link {
+  color: var(--color-link);
+}
+
+:visited {
+  color: var(--color-link-visited);
+}
+
+body {
+  max-width: var(--body-max-width);
+  min-width: var(--header-width-large);
+  margin: 0px auto;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: sans-serif;
+}
+
+main {
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#header-pic {
+  width: var(--header-width-small);
+  border: var(--header-border-width) solid;
+  border-top-left-radius: calc(0.5 * var(--header-width-small));
+  border-top-right-radius: calc(0.5 * var(--header-width-small));
+  margin-top: 5px;
+  margin-bottom: calc(-1 * var(--header-border-width));
+}
+
+#header-name {
+  width: var(--header-width-large);
+  border: var(--header-border-width) solid;
+  background-color: var(--color-bg-accent);
+  margin: 0px;
+  margin-bottom: calc(-1 * var(--header-border-width));
+  padding: 3px;
+  text-align: center;
+  font-size: 5.5em;
+  font-family: Rochester;
+}
+
+#header-nav {
+  width: var(--header-width-small);
+  border: var(--header-border-width) solid var(--color-text);
+  background-color: var(--color-bg-accent);
+  padding: 10px 0px;
+}
+
+#header-nav ul {
+  list-style: none;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#header-nav li {
+  margin: 0px;
+  padding: 0px;
+}
+
+#header-nav a {
+  color: var(--color-text-accent);
+}
+
+#resume section {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#skills > ul {
+  list-style: none;
+}
+
+.inline-list, .inline-list>li {
+  padding-left: 0px;
+  display: inline;
+  list-style: none;
+}
+
+.inline-list>li::after {
+  content: ",";
+}
+
+.inline-list>li:last-child::after {
+  content: ".";
+}
+
+#publications > ul {
+  list-style: none;
+}
