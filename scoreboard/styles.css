@@ -1,0 +1,44 @@
+h1 {
+    text-align: center;
+}
+
+#scoreboard {
+    margin-bottom: 10px;
+}
+
+#scoreboard table, #scoreboard td {
+    border: 1px solid;
+    text-align: center;
+}
+
+#scoreboard table {
+    margin: 0px auto;
+    border-collapse: collapse;
+}
+
+#scoreboard thead {
+    border-bottom: 3px solid;
+    font-weight: bold;
+}
+
+#scoreboard .player_col {
+    width: 100px;
+}
+
+#scoreboard .score_col {
+    width: 50px;
+}
+
+#scoreboard .actions_col {
+    width: 200px;
+}
+
+#scoreboard .actions_cell {
+    display: flex;
+    justify-content: space-around;
+}
+
+#buttons {
+    text-align: center;
+    margin: 0px auto;
+}
