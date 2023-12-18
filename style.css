@@ -8,7 +8,7 @@
 
 :root {
   --color-bg: #030303;
-  --color-bg-accent: #080D08;
+  --color-bg-accent: #132013;
   --color-text: #EEEEEE;
   --color-text-accent: #DFFFDF;
   --color-link: #3B3BED;
@@ -17,7 +17,7 @@
 @media (prefers-color-scheme: light) {
   :root{
     --color-bg: #EEEEEE;
-    --color-bg-accent: #DFFFDF;
+    --color-bg-accent: #82B982;
     --color-text: #030303;
     --color-text-accent: #080D08;
     --color-link: #0000EE;
@@ -104,8 +104,13 @@ header {
 }
 
 #resume section {
-    margin-left: 20px;
-    margin-right: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 2.5em;
+}
+
+dd {
+  margin-bottom: 1em;
 }
 
 #skills > ul {
@@ -128,4 +133,8 @@ header {
 
 #publications > ul {
   list-style: none;
+}
+
+#publications > ul > li {
+  margin-bottom: 1em;
 }
