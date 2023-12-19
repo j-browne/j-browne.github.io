@@ -11,8 +11,8 @@
   --color-bg-accent: #132013;
   --color-text: #EEEEEE;
   --color-text-accent: #DFFFDF;
-  --color-link: #3B3BED;
-  --color-link-visited: #63388C;
+  --color-link: #DFFFDF;
+  --color-link-visited: #415D41;
 }
 @media (prefers-color-scheme: light) {
   :root{
@@ -20,8 +20,8 @@
     --color-bg-accent: #82B982;
     --color-text: #030303;
     --color-text-accent: #080D08;
-    --color-link: #0000EE;
-    --color-link-visited: #551A8B;
+    --color-link: #70A070;
+    --color-link-visited: #385038;
   }
 }
 
@@ -31,6 +31,7 @@
 }
 
 :link {
+  font-weight: 500;
   color: var(--color-link);
 }
 
