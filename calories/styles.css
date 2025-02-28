@@ -1,0 +1,30 @@
+h1 {
+    text-align: center;
+}
+
+main {
+    text-align: center;
+}
+
+#data-log {
+    table, td {
+        border: 1px solid black;
+    }
+
+    table {
+        margin: 0px auto;
+        border-collapse: collapse;
+
+        td {
+            padding: 5px;
+        }
+
+        .date-col {
+            width: 200px;
+        }
+
+        .cal-col {
+            width: 100px;
+        }
+    }
+}
