@@ -8,17 +8,31 @@ function update() {
 }
 
 function render_add_data() {
-    let container = document.createElement("div");
+    let container = document.createElement("form");
     container.id = "add-data";
 
-    let input = document.createElement("input");
-    input.id = "new-val";
+    let input_name = document.createElement("input");
+    input_name.id = "new-name";
+    input_name.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            document.getElementById("add-button").click();
+        }
+    });
+
+    let input_val = document.createElement("input");
+    input_val.id = "new-val";
+    input_val.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            document.getElementById("add-button").click();
+        }
+    });
 
     let button = document.createElement("button");
-    button.addEventListener ("click", add_new_val, false);
+    button.id = "add-button";
+    button.addEventListener ("click", add_new_data, false);
     button.appendChild(document.createTextNode("Add"));
 
-    container.replaceChildren(input, button);
+    container.replaceChildren(input_name, input_val, button);
 
     return container;
 }
@@ -44,7 +58,7 @@ function render_data_log() {
     colgroup.replaceChildren(date_col, cal_col);
     table.appendChild(colgroup);
     for (let [date, cal_entries] of Object.entries(calorie_data)) {
-        let cal_sum = cal_entries.reduce((a, b) => a + b, 0);
+        let cal_sum = cal_entries.map((a) => a[1]).reduce((a, b) => a + b, 0);
         let row = table.insertRow();
         let cell1 = row.insertCell();
         cell1.appendChild(document.createTextNode(date));
@@ -57,7 +71,8 @@ function render_data_log() {
     return container;
 }
 
-function add_new_val() {
+function add_new_data() {
+    let new_name = document.getElementById("new-name").value;
     let new_val = Number.parseFloat(document.getElementById("new-val").value);
 
     let calorie_data = JSON.parse(localStorage.getItem("calorie_data"));
@@ -66,12 +81,12 @@ function add_new_val() {
     }
 
     let today_key = new Date().toDateString();
-    let today_val = calorie_data[today_key];
-    if (!today_val) {
-        today_val = [];
+    let today_data = calorie_data[today_key];
+    if (!today_data) {
+        today_data = [];
     }
-    today_val.push(new_val);
-    calorie_data[today_key] = today_val;
+    today_data.push([new_name, new_val]);
+    calorie_data[today_key] = today_data;
 
     localStorage.setItem("calorie_data", JSON.stringify(calorie_data));
 
