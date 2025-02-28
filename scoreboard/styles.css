@@ -1,3 +1,15 @@
+:root {
+    color-scheme: dark light;
+
+    --color-bg: light-dark(#EEE, #222);
+    --color-text: light-dark(#222, #EEE);
+}
+
+body {
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
 h1 {
     text-align: center;
 }
