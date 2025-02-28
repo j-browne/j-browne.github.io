@@ -54,3 +54,17 @@ h1 {
     text-align: center;
     margin: 0px auto;
 }
+
+@media only screen and (max-width:768px) {
+    #buttons,
+    #scoreboard .actions_cell {
+        button {
+            padding: 20px;
+            border-radius: 10px;
+        }
+    }
+
+    #scoreboard .actions_col {
+        width: 300px;
+    }
+}
