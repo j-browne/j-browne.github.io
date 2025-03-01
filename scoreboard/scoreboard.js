@@ -159,8 +159,17 @@ function save_scores() {
 }
 
 function load_scores() {
-    player_scores = JSON.parse(localStorage.getItem("saved_scores"));
-    update();
+    let temp_scores = null;
+    try {
+        temp_scores = JSON.parse(localStorage.getItem("saved_scores"));
+    } finally {
+        if (temp_scores) {
+            player_scores = temp_scores;
+        } else {
+            console.log("failed to load from storage");
+        }
+        update();
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
