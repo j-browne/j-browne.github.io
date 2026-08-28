@@ -9,7 +9,9 @@ function render() {
     streak.id = "streak";
     if (streak_data_valid()) {
         let streak_type = streak_data.head ? "Heads" : "Tails";
-        streak.appendChild(document.createTextNode(`Current Streak: ${streak_data.num} ${streak_type}`));
+        streak.appendChild(document.createTextNode("Current Streak:"));
+        streak.appendChild(document.createElement("br"));
+        streak.appendChild(document.createTextNode(`${streak_data.num} ${streak_type}`));
     } else {
         streak.appendChild(document.createTextNode("No Current Streak"));
     }
