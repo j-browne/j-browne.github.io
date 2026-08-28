@@ -104,38 +104,30 @@ header {
   color: var(--color-text-accent);
 }
 
-#resume section {
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 2.5em;
-}
+#resume{
+    section {
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 2.5em;
+    }
 
-dd {
-  margin-bottom: 1em;
-}
+    dd {
+      margin-bottom: 1em;
+    }
 
-#skills > ul {
-  list-style: none;
-}
+    ul {
+      text-indent: -1em;
+    }
 
-.inline-list, .inline-list>li {
-  padding-left: 0px;
-  display: inline;
-  list-style: none;
-}
+    ul > li{
+      padding-left: 1em;
+    }
 
-.inline-list>li::after {
-  content: ",";
-}
+    #publications > ul {
+      list-style: none;
+    }
 
-.inline-list>li:last-child::after {
-  content: ".";
-}
-
-#publications > ul {
-  list-style: none;
-}
-
-#publications > ul > li {
-  margin-bottom: 1em;
+    #publications > ul > li {
+      margin-bottom: 1em;
+    }
 }
